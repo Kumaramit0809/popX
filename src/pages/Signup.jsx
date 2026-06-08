@@ -14,10 +14,24 @@ export default function Signup() {
     company: '',
     isAgency: 'yes',
   })
+  const [error, setError] = useState('')
 
   const update = field => e => setForm(prev => ({ ...prev, [field]: e.target.value }))
 
   const handleSubmit = () => {
+    if (!form.fullName.trim() || !form.phone.trim() || !form.email.trim() || !form.password.trim()) {
+      setError('Please fill all required fields.')
+      return
+    }
+    localStorage.setItem('popx_user', JSON.stringify({
+      fullName: form.fullName,
+      phone: form.phone,
+      email: form.email,
+      password: form.password,
+      company: form.company,
+      isAgency: form.isAgency,
+    }))
+    setError('')
     navigate('/profile')
   }
 
@@ -89,6 +103,8 @@ export default function Signup() {
               </label>
             </div>
           </div>
+
+          {error && <p className="signup-error">{error}</p>}
         </div>
 
         <div className="signup-cta">

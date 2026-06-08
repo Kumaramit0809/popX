@@ -8,8 +8,23 @@ export default function Login() {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
 
   const handleLogin = () => {
+    if (!email.trim() || !password.trim()) {
+      setError('Please enter both email and password.')
+      return
+    }
+    const saved = JSON.parse(localStorage.getItem('popx_user'))
+    if (!saved) {
+      setError('No account found. Please sign up first.')
+      return
+    }
+    if (email !== saved.email || password !== saved.password) {
+      setError('Invalid email or password.')
+      return
+    }
+    setError('')
     navigate('/profile')
   }
 
@@ -36,6 +51,7 @@ export default function Login() {
             onChange={e => setPassword(e.target.value)}
             placeholder="Enter password"
           />
+          {error && <p className="login-error">{error}</p>}
           <Button variant="gray" onClick={handleLogin}>
             Login
           </Button>
