@@ -1,0 +1,36 @@
+.popx-btn {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  letter-spacing: 0.2px;
+}
+
+.popx-btn:hover {
+  opacity: 0.92;
+}
+
+.popx-btn--primary {
+  background: #6C25FF;
+  color: #ffffff;
+}
+
+.popx-btn--secondary {
+  background: #CEBAFB;
+  color: #1D2226;
+}
+
+.popx-btn--gray {
+  background: #CBCBCB;
+  color: #ffffff;
+}
+
+.popx-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

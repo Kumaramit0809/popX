@@ -1,0 +1,38 @@
+.landing-screen {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 24px 48px 24px;
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-heading {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1D2226;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.landing-subtitle {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.landing-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
